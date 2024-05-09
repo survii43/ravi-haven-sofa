@@ -4,7 +4,9 @@ import 'firebase/compat/auth';
 import 'firebase/compat/database';//AdminLogin
 import AdminLogin from '../admin/AdminLogin';
 import HeroSectionAdmin from './HeroSectionAdmin';//Galary
-import Galary from '../admin/Galary';//Galary
+import Galary from '../admin/Galary';//ListOfEnquirry
+import ListOfEnquirry from '../admin/ListOfEnquirry';//ListOfEnquirry
+
 
 
 function Dashboard() {
@@ -37,15 +39,18 @@ function Dashboard() {
   };
 
   return (
-    <div> <p>Welcome, {user?.email}</p>
-                <button className="w-[200px] bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600" onClick={handleLogout}>Logout</button>
+    <div> <div className='flex justify-between p-[20px]'>
+      <p>Welcome, {user?.email}</p>
+      <button className="w-[200px] bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600" onClick={handleLogout}>Logout</button>
+    </div>
 
       {user ? (
         <div className='flex justify-evenly'>
-         
-          <HeroSectionAdmin/>
-          <Galary/>
-          
+
+          <HeroSectionAdmin />
+          <Galary />
+          <ListOfEnquirry />
+
         </div>
       ) : (
         <AdminLogin />

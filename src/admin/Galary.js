@@ -102,7 +102,7 @@ const Galary = () => {
     };
 
     return (
-        <div className='w-[40%]'>
+        <div className='w-[30%]'>
             <div className='border '>
         <div>Galary</div>
         <div className='flex flex-col items-center border rounded p-4'>
@@ -111,9 +111,9 @@ const Galary = () => {
           accept="image/*"
           onChange={handleFileChange}
           className="hidden"
-          id="upload-file"
+          id="upload-file-galary"
         />
-        <label htmlFor="upload-file" className="cursor-pointer mb-2">
+        <label htmlFor="upload-file-galary" className="cursor-pointer mb-2">
           Choose File
         </label>
         {file && (
