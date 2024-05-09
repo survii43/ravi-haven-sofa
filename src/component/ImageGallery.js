@@ -21,7 +21,7 @@ const ImageGallery = () => {
   const fetchImages = async () => {
     try {
       const storageRef = firebase.storage().ref();
-      const imagesRef = storageRef.child('hero_section');
+      const imagesRef = storageRef.child('galary');
       const imageList = await imagesRef.listAll();
       // Get download URLs for each image
       const urls = await Promise.all(

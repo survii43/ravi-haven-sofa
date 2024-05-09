@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faFacebook, faYoutube,faInstagram } from '@fortawesome/free-brands-svg-icons';
+import {  NavLink } from 'react-router-dom';
 
 
 
@@ -15,19 +16,19 @@ function Footer() {
                     <div class="contact-details">
                         <h1>Contact Us</h1>
                         <li>
-                            <div class="fa fa-phone"></div><a href="tel:+919326048690">+91 0987654321</a></li>
+                            <div class="fa fa-phone"></div><a href="tel:+919326048690">+91 9738756736</a></li>
                         <li>
-                            <div class="fa fa-envelope"></div><a href="mailto:yourmail@gmail.com">yourmail@gmail.com</a></li>
+                            <div class="fa fa-envelope"></div><a href="mailto:yourmail@gmail.com">havensofa@gmail.com</a></li>
 
                     </div>
                 </div>
                 <div class="com " data-aos="fade-up">
                     <h1>About</h1>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink to="/about">About</NavLink></li>
+                        <li><NavLink to="/privacy">Privacy</NavLink></li>
+                        <li><NavLink to="/contact">Contact</NavLink></li>
                     </ul>
                 </div>
                 <div>

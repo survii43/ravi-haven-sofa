@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import backgroundImage from '../images/hero1004.jpeg'; 
+import firebase from '../firebase/firebase';
+import 'firebase/database';
 
 export default function Contacts() {
   
@@ -17,17 +19,36 @@ export default function Contacts() {
     }));
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // You can add your form submission logic here
+  //   console.log(formData);
+  //   // Reset form fields after submission
+  //   setFormData({
+  //     name: '',
+  //     email: '',
+  //     mobileNumber: ''
+  //   });
+  // };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can add your form submission logic here
-    console.log(formData);
-    // Reset form fields after submission
-    setFormData({
-      name: '',
-      email: '',
-      mobileNumber: ''
+  
+    // Get a reference to the database service
+    const database = firebase.database();
+  
+    // Save data to Firebase Realtime Database
+    const newContactRef = database.ref('Contacts').push();
+    newContactRef.set({
+      name: formData.name,
+      email: formData.email,
+      number: formData.mobileNumber // Change 'number' to 'mobileNumber'
     });
+  
+    // Clear form data after submission
+    setFormData({ name: '', email: '', mobileNumber: '' }); // Clear 'mobileNumber' instead of 'number'
   };
+  
 
   return (
     <div 
