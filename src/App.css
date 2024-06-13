@@ -193,10 +193,11 @@ footer a {
 }
 
 .container__slider {
+  text-align: center;
   align-items: center;
   height: 90vh;
   position: relative;
-  width: 90%;
+  width: 100%;
   padding: 0;
   overflow: hidden;
   display: flex;
